@@ -1,0 +1,12 @@
+<div class="container">
+  <%= form_for(@task) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :details %>
+  <%= f.text_field :details %>
+  <%= f.label :completed unless task.new_record? %>
+  <%= f.check_box :completed unless @task.new_record? %>
+  <%= f.submit %>
+  <% end %>
+  <p><%= link_to "Back to tasks", tasks_path %></p>
+</div>
