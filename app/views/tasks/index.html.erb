@@ -1,12 +1,15 @@
-<ul>
-  <% @tasks.each do |task| %>
-    <li>
-    <%= link_to task.title, task_path(task) %>
-    <strong><%= link_to "Delete", task_path(task),
-                method: :delete,
-                data: { confirm: "Are you sure?" } %>
-    </strong>
-    </li>
-  <% end %>
-</ul>
-<h3><%= link_to "Create a new task", new_task_path %></h3>
+<div class="container">
+  <ul class="list-group">
+    <% @tasks.each do |task| %>
+      <li class="list-group-item">
+      <%= link_to task.title, task_path(task) %>
+      <strong><%= link_to "Delete", task_path(task),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+      </strong>
+      <i class= "<%= task.completed ? "fas fa-check" : "fas fa-times"%>"></i>
+      </li>
+    <% end %>
+  </ul>
+  <p><%= link_to "Create a new task", new_task_path %></p>
+</div>
