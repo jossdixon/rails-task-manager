@@ -4,7 +4,7 @@
   <%= f.text_field :title %>
   <%= f.label :details %>
   <%= f.text_field :details %>
-  <%= f.label :completed unless task.new_record? %>
+  <%= f.label :completed unless @task.new_record? %>
   <%= f.check_box :completed unless @task.new_record? %>
   <%= f.submit %>
   <% end %>
